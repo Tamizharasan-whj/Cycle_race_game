@@ -112,26 +112,16 @@ function draw(){
    }
    
   
-   if (opponent1group.isTouching(player)){
+  
       player.collide(opponent1group,changeAnime1);
-     
-     gameState  = 0;
-   }
-   
-   if (opponent2group.isTouching(player)){
       player.collide(opponent2group,changeAnime2);
-     gameState  = 0;
-   }
-   
-   if (opponent3group.isTouching(player)){
       player.collide(opponent3group,changeAnime3);
-     gameState  = 0;
-   }
+  
 if (opponent1group.isTouching(player)||opponent2group.isTouching(player)||
     opponent3group.isTouching(player)||obstacleGroup.isTouching(player)){
   
       gameState= 0;
-      score = 0;
+   
  
  }
  }
@@ -227,6 +217,8 @@ function spawnOpponents3(){
 function changeAnime1(player,opponent1){
   opponent1.changeAnimation("opponent1", opponent_1);
   opponent1.setVelocityXEach = 0;
+     gameState= 0;
+   
   
 }
 
@@ -234,12 +226,16 @@ function changeAnime1(player,opponent1){
 function changeAnime2(player,opponent2){
   opponent2.changeAnimation("opponent2", opponent_2);
   opponent2.setVelocityXEach = 0;
+     gameState= 0;
+   
 }
 
 
 function changeAnime3(player,opponent3){
   opponent3.changeAnimation("opponent3", opponent_3);
   opponent3.setVelocityXEach = 0;
+     gameState= 0;
+   
 }
 
 function restartGame(){
