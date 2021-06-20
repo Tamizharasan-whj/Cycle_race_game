@@ -10,7 +10,7 @@ var player,playerAnime,player_1;
 var obstacle;
 var obstacle1, obstacle2,obstacle3;
 
-var opponent1,opponent2,opponent3
+var opponent1,opponent2,opponent3;
 var opponent1_img,opponent2_img,opponent3_img,opponent_1,opponent_2,opponent_3;
 
 var ran;
@@ -128,9 +128,11 @@ if (opponent1group.isTouching(player)||opponent2group.isTouching(player)||
   
   //gamestate change
 if (gameState==0){
-  
-  
-    
+  player.destroy();
+  opponent1group.destroyEach();
+  opponent2group.destroyEach();
+  obstacleGroup.destroyEach();
+  opponent3group.destroyEach();
   restartGame();
         
   
@@ -250,17 +252,10 @@ var gameOverImg,restartImg;
   player.velocityX = 0;
   road.velocityX = 0;
   
+  
   player.changeAnimation("over",player_1);
 
-  obstacleGroup.setVelocityXEach(0);
-  opponent1group.setVelocityXEach(0);
-   opponent2group.setVelocityXEach(0);
-   opponent3group.setVelocityXEach(0);
-  obstacleGroup.setLifetimeEach(-1);
-  opponent1group.setLifetimeEach(-1);
-   opponent2group.setLifetimeEach(-1);
-   opponent3group.setLifetimeEach(-1);
-  
+    
     
   if(mousePressedOver(restart)){
       
